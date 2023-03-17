@@ -1,0 +1,50 @@
+<!-- 子组件 -->
+<template>
+  <li>
+    <base-card>
+      <header>
+        <h3>{{ title }}</h3>
+        <base-button mode="flat">Delete</base-button>
+      </header>
+
+      <p>{{ description }}</p>
+      <nav>
+        <a :href="link">View Resource</a>
+        <!-- 这样绑定连接不需要花括号 -->
+      </nav>
+    </base-card>
+  </li>
+</template>
+
+<script>
+export default {
+  props: ["title", "description", "link"],
+};
+</script>
+<!-- 使用scoped，这样样式是该组件独有的 -->
+<style scoped>
+li {
+  margin: auto;
+  max-width: 40rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h3 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+p {
+  margin: 0.5rem 0;
+}
+a {
+  text-decoration: none;
+  color: #ce5c00;
+}
+a:hover,
+a:active {
+  color: #c89300;
+}
+</style>
