@@ -1,35 +1,20 @@
 <template>
   <the-header title="RememberMe"></the-header>
-  <stored-resources :rescources="storedResources"></stored-resources>
+  <the-resources></the-resources>
+  <!-- <stored-resources :rescources="storedResources"></stored-resources> -->
   <!-- 通过在组件上绑定元素，将数据通过props传递到子组件中 -->
 </template>
 <script>
 //import LearningResource from "./components/learning-recource/LearningResource.vue";
-import StoredResources from "./components/learning-recource/StoredResources.vue";
+//import StoredResources from "./components/learning-recource/StoredResources.vue";
 import TheHeader from "./components/layouts/TheHeader.vue";
+import TheResources from "./components/learning-recource/TheResources.vue";
 export default {
   components: {
     //LearningResource,
-    StoredResources,
+    //StoredResources,
     TheHeader,
-  },
-  data() {
-    return {
-      storedResources: [
-        {
-          id: "official-guide",
-          title: "Official Guide",
-          description: "The official Vue.js documentrtion.",
-          link: "https://vuejs.org",
-        },
-        {
-          id: "google",
-          title: "Google",
-          description: "Lear to google...",
-          link: "https://google.org",
-        },
-      ],
-    };
+    TheResources,
   },
 };
 </script>

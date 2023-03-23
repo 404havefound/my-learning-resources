@@ -4,7 +4,9 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <base-button mode="flat">Delete</base-button>
+        <base-button mode="flat" @click="removeResource(id)"
+          >Delete</base-button
+        >
       </header>
 
       <p>{{ description }}</p>
@@ -18,7 +20,8 @@
 
 <script>
 export default {
-  props: ["title", "description", "link"],
+  props: ["title", "description", "link", "id"],
+  inject: ["removeResource"],
 };
 </script>
 <!-- 使用scoped，这样样式是该组件独有的 -->
